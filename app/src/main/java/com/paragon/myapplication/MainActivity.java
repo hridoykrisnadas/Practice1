@@ -1,5 +1,7 @@
 package com.paragon.myapplication;
 
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +17,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button buttonListener, viewOrder, DateSelect;
+    Button buttonListener, viewOrder, DateSelect, DialogDateBtn, NextPage;
     CheckBox checkBox1, checkBox2, checkBox3;
-    TextView orderText, RatingTextViewR, SeekBarrResult, DateTextView;
+    TextView orderText, RatingTextViewR, SeekBarrResult, DateTextView, DialogTextView;
     RatingBar RateBar;
     SeekBar seekBar;
     Switch switch1;
     DatePicker datePicker;
+    DatePickerDialog datePickerDialog;
 
 
     @Override
@@ -44,9 +47,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DateSelect = findViewById(R.id.SelectDateButtonId);
         DateTextView = findViewById(R.id.DateTextID);
         datePicker = findViewById(R.id.DatePickerId);
+        DialogDateBtn = findViewById(R.id.Dialog_datePickerId);
+        DialogTextView = findViewById(R.id.DialogDateTextID);
+        NextPage = findViewById(R.id.NextPage);
 
         DateTextView.setText(currentDate());
         DateSelect.setOnClickListener(this);
+        DialogDateBtn.setOnClickListener(this);
+        NextPage.setOnClickListener(this);
 
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -128,6 +136,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.SelectDateButtonId) {
             Toast.makeText(MainActivity.this, "Button has Clicked", Toast.LENGTH_SHORT).show();
             DateTextView.setText(currentDate());
+
+        } else if (v.getId() == R.id.Dialog_datePickerId) {
+            Toast.makeText(MainActivity.this, "Button has Clicked", Toast.LENGTH_SHORT).show();
+
+            DatePicker datePicker = new DatePicker(this);
+            int date = datePicker.getDayOfMonth();
+            int months = datePicker.getMonth();
+            int years = datePicker.getYear();
+
+            datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    DialogTextView.setText("Date is: " + dayOfMonth + "/" + month + 1 + "/" + year);
+                }
+            }, years, months, date);
+
+            datePickerDialog.show();
+        } else if (v.getId() == R.id.NextPage) {
+            Toast.makeText(MainActivity.this, "Going to Next activity", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(intent);
+            Toast.makeText(MainActivity.this, "It's Second Activity", Toast.LENGTH_SHORT).show();
         }
 
     }

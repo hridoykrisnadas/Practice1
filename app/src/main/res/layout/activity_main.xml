@@ -10,10 +10,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +29,8 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button Listener">
+            android:text="Button Listener"
+            android:textAllCaps="false">
         </Button>
     </LinearLayout>
 
@@ -207,6 +210,38 @@
                 android:calendarViewShown="false"
                 android:theme="@style/Base.CardView"
                 android:calendarTextColor="@color/purple_700"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/DialogDateTextID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date is: "
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+            <Button
+                android:id="@+id/Dialog_datePickerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textAllCaps="false">
+            </Button>
+
+            <Button
+                android:id="@+id/NextPage"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:text="Next Page">
+            </Button>
+
 
         </LinearLayout>
     </ScrollView>

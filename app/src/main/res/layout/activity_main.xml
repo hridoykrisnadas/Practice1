@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonListener"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button Listener">
+        </Button>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Check your Order"
+        android:background="@drawable/editextbackground"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox1"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Burger"
+            android:focusableInTouchMode="false"
+            android:shadowColor="#3F51B5">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/checkbox2"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chciken Fry"
+            android:shadowColor="#3F51B5"
+            android:focusableInTouchMode="false">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/checkbox3"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fish fry"
+            android:shadowColor="#3F51B5"
+            android:focusableInTouchMode="false">
+        </CheckBox>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/viewOrderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Order"
+        android:padding="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plese Check your Order"
+        android:background="@drawable/editextbackground"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:visibility="invisible">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RatingBarID"
+            android:rating="2.5"
+            android:stepSize=".5"
+            android:progressBackgroundTint="#03A9F4"
+            android:progressTint="@color/purple_700">
+        </RatingBar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/RatingResultId"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/editextbackground"
+            android:visibility="invisible"
+            android:gravity="center_vertical">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:layout_gravity="center_vertical"
+            android:id="@+id/SeekBarID"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:outlineAmbientShadowColor="@color/black"
+            android:padding="10dp"
+            android:thumbTint="@color/purple_700"></SeekBar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SeekBarResultId"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/editextbackground"
+            android:visibility="invisible"
+            android:gravity="center_vertical">
+        </TextView>
+
+    </LinearLayout>
+
+<Switch
+    android:id="@+id/switchId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Wifi "
+    android:textSize="20sp"
+    android:layout_gravity="center_horizontal">
+
+</Switch>
+
+    <TextView
+        android:id="@+id/DateTextID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date is: "
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black">
+    </TextView>
+    <Button
+        android:id="@+id/SelectDateButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textAllCaps="false">
+    </Button>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <DatePicker
+                android:id="@+id/DatePickerId"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/editextbackground"
+                android:datePickerMode="spinner"
+                android:spinnersShown="true"
+                android:calendarViewShown="false"
+                android:theme="@style/Base.CardView"
+                android:calendarTextColor="@color/purple_700"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

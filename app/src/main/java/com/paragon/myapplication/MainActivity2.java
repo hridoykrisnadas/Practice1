@@ -38,7 +38,7 @@ public class MainActivity2 extends AppCompatActivity {
         CountrySpinner = findViewById(R.id.CountrySpinnerID);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, getCountry());
+                this, android.R.layout.simple_list_item_single_choice, getCountry());
 
         CountrySpinner.setAdapter(arrayAdapter);
 

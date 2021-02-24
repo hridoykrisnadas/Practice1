@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -19,7 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button buttonListener, viewOrder, DateSelect, DialogDateBtn, NextPage;
     CheckBox checkBox1, checkBox2, checkBox3;
-    TextView orderText, RatingTextViewR, SeekBarrResult, DateTextView, DialogTextView;
+    TextView orderText, LanguageResult, RatingTextViewR, SeekBarrResult, DateTextView, DialogTextView;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     RatingBar RateBar;
     SeekBar seekBar;
     Switch switch1;
@@ -51,10 +55,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DialogTextView = findViewById(R.id.DialogDateTextID);
         NextPage = findViewById(R.id.NextPage);
 
+        LanguageResult = findViewById(R.id.LanguageResultId);
+        radioGroup = findViewById(R.id.RadiogroupId);
+
+
         DateTextView.setText(currentDate());
         DateSelect.setOnClickListener(this);
         DialogDateBtn.setOnClickListener(this);
         NextPage.setOnClickListener(this);
+
+        radioButton = findViewById(R.id.Java);
+        radioButton.setChecked(true);
+        String Result = radioButton.getText().toString();
+        LanguageResult.setText(Result);
+        LanguageResult.setVisibility(View.VISIBLE);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                radioButton = findViewById(checkedId);
+                String Result = radioButton.getText().toString();
+                LanguageResult.setText(Result);
+                LanguageResult.setVisibility(View.VISIBLE);
+
+
+            }
+        });
 
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -159,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             Toast.makeText(MainActivity.this, "It's Second Activity", Toast.LENGTH_SHORT).show();
         }
+
 
     }
 

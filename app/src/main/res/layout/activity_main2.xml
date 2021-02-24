@@ -8,13 +8,65 @@
     android:orientation="vertical"
     android:padding="5dp">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/previousbtnId"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:text="Previous Page">
+            </Button>
+
+            <Spinner
+                android:id="@+id/CountrySpinnerID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+            <TextView
+                android:id="@+id/CountryNameResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Country is: "
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/DialogDateTextID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date is: "
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
+    <Button
+        android:id="@+id/Dialog_datePickerId"
+        android:background="@color/purple_700"
+        android:textColor="#ffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textAllCaps="false">
+    </Button>
 
 
         </LinearLayout>

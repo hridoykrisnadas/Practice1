@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:gravity="center_horizontal">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -58,6 +59,7 @@
             android:layout_height="wrap_content"
             android:text="Burger"
             android:focusableInTouchMode="false"
+            android:buttonTint="#F44336"
             android:shadowColor="#3F51B5">
         </CheckBox>
         <CheckBox
@@ -68,6 +70,7 @@
             android:layout_height="wrap_content"
             android:text="Chciken Fry"
             android:shadowColor="#3F51B5"
+            android:buttonTint="#F44336"
             android:focusableInTouchMode="false">
         </CheckBox>
         <CheckBox
@@ -78,6 +81,7 @@
             android:layout_height="wrap_content"
             android:text="Fish fry"
             android:shadowColor="#3F51B5"
+            android:buttonTint="#F44336"
             android:focusableInTouchMode="false">
         </CheckBox>
     </LinearLayout>
@@ -106,7 +110,67 @@
         android:visibility="invisible">
     </TextView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:id="@+id/RadiogroupId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:id="@+id/Java"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Java"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:buttonTint="#F44336">
+                    </RadioButton>
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:id="@+id/Python"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Python"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:buttonTint="#F44336">
+                    </RadioButton>
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:id="@+id/PHP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PHP"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:buttonTint="#F44336">
+                    </RadioButton>
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/LanguageResultId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Plese Check your Order"
+                    android:background="@drawable/editextbackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:visibility="invisible">
+                </TextView>
+
+            </LinearLayout>
+
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -118,8 +182,8 @@
             android:id="@+id/RatingBarID"
             android:rating="2.5"
             android:stepSize=".5"
-            android:progressBackgroundTint="#03A9F4"
-            android:progressTint="@color/purple_700">
+            android:progressBackgroundTint="#FF8E87"
+            android:progressTint="#DF1506">
         </RatingBar>
 
         <TextView

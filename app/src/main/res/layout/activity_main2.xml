@@ -47,26 +47,56 @@
 
         <TextView
             android:layout_marginTop="10dp"
-            android:id="@+id/DialogDateTextID"
+            android:id="@+id/TimeTextID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date is: "
+            android:text="Time is: "
             android:gravity="center_horizontal"
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/black">
         </TextView>
     <Button
-        android:id="@+id/Dialog_datePickerId"
+        android:id="@+id/TimePickerButtonId"
         android:background="@color/purple_700"
         android:textColor="#ffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Date"
+        android:text="Select Time"
         android:textStyle="bold"
         android:textSize="15sp"
         android:textAllCaps="false">
     </Button>
+
+            <TimePicker
+                android:id="@+id/TimepickerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:timePickerMode="clock"/>
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/DialogTimeTextID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time is: "
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+            <Button
+                android:id="@+id/DialogTimePickerButtonId"
+                android:background="@color/purple_700"
+                android:textColor="#ffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Time"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textAllCaps="false">
+            </Button>
 
 
         </LinearLayout>

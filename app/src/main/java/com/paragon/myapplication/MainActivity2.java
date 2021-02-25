@@ -1,5 +1,6 @@
 package com.paragon.myapplication;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,21 +9,59 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity2 extends AppCompatActivity {
-    TextView CountryName;
-    Button previousbtn;
+    TextView CountryName, TimeTextView, DialogTimeTextView;
+    Button previousbtn, TimeButton, DialogTimeButton;
     Spinner CountrySpinner;
+    TimePicker timePicker;
+    TimePickerDialog timePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+
+        TimeTextView = findViewById(R.id.TimeTextID);
+        timePicker = findViewById(R.id.TimepickerId);
+        TimeButton = findViewById(R.id.TimePickerButtonId);
+
+        DialogTimeTextView = findViewById(R.id.DialogTimeTextID);
+        DialogTimeButton = findViewById(R.id.DialogTimePickerButtonId);
+
+        DialogTimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    TimePicker timePicker1 = new TimePicker(MainActivity2.this);
+
+                int gethour = timePicker1.getCurrentHour();
+                int getminute = timePicker1.getCurrentMinute();
+
+
+                timePickerDialog = new TimePickerDialog(MainActivity2.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                                DialogTimeTextView.setText("Time is: "+ hourOfDay+" : "+minute);
+
+                            }
+                        }, gethour, getminute, true);
+
+                timePickerDialog.show();
+
+            }
+        });
 
         previousbtn = findViewById(R.id.previousbtnId);
         previousbtn.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +74,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+
         CountrySpinner = findViewById(R.id.CountrySpinnerID);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
@@ -45,6 +85,7 @@ public class MainActivity2 extends AppCompatActivity {
         CountrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                CountryName.setText("Country is: " + parent.getItemAtPosition(18));
                 CountryName = findViewById(R.id.CountryNameResult);
 
                 String result = parent.getSelectedItem().toString();
@@ -60,10 +101,23 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
 
+
+        TimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String time = timePicker.getCurrentHour() + " : " + timePicker.getCurrentMinute();
+                TimeTextView.setText("Time is: " + time);
+
+            }
+        });
+
+
+
     }
 
     public ArrayList<String> getCountry() {
         ArrayList<String> getCountries = new ArrayList<>();
+        getCountries.add("Bangladesh");
         getCountries.add("Afghanistan");
         getCountries.add("Åland Islands");
         getCountries.add("Albania");
@@ -82,7 +136,6 @@ public class MainActivity2 extends AppCompatActivity {
         getCountries.add("Azerbaijan");
         getCountries.add("Bahrain");
         getCountries.add("Bahamas");
-        getCountries.add("Bangladesh");
         getCountries.add("Barbados");
         getCountries.add("Belarus");
         getCountries.add("Belgium");

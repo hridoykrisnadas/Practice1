@@ -23,7 +23,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView CountryName, TimeTextView, DialogTimeTextView;
     Button previousbtn, TimeButton, DialogTimeButton;
     Spinner CountrySpinner;
-    TimePicker timePicker;
+    TimePicker timePicker, timePicker1;
     TimePickerDialog timePickerDialog;
 
     @Override
@@ -42,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
         DialogTimeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    TimePicker timePicker1 = new TimePicker(MainActivity2.this);
+                timePicker1 = new TimePicker(MainActivity2.this);
 
                 int gethour = timePicker1.getCurrentHour();
                 int getminute = timePicker1.getCurrentMinute();
@@ -85,9 +85,7 @@ public class MainActivity2 extends AppCompatActivity {
         CountrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                CountryName.setText("Country is: " + parent.getItemAtPosition(18));
                 CountryName = findViewById(R.id.CountryNameResult);
-
                 String result = parent.getSelectedItem().toString();
                 CountryName = findViewById(R.id.CountryNameResult);
                 CountryName.setText("Country is: " + result);
